@@ -1,0 +1,22 @@
+<div [@blackScreenAnim]="listMenu==false ? 'hide' : 'show'"  (click)="closeWindow()" id="black_screen"></div>
+<div  style="width:100%;position:relative;" class="d-flex justify-content-center">
+  <div *ngIf="listMenu" [@windowToggle] class="create_category" >
+    <div class="create_category_header ">
+      <h2>Aggiungi lista</h2>
+      <span (click)="closeWindow();" style="float:right; margin-top:-45px">
+<img class="exit" src="../../assets/Icon/delete.svg">
+      </span>
+    </div>
+    <div style="padding-top:30px; padding-left:30px; padding-right:30px">
+      <form [formGroup]="listForm">
+        <label>Nome della lista</label>
+        <div class="d-flex">
+<img class="icon" src="../../assets/Icon/list.svg">
+    <input formControlName="name" maxlength="16" placeholder="Inserisci il nome della lista" type="text" >
+</div>
+<p style="margin-top:10px; margin-bottom:0px !important" class="error">{{error}}</p>
+<button [disabled]="validForm()" (click)="createList(listInput);" type="submit" id="confirm_button">Conferma <span><img  src="../../assets/Icon/check.svg"></span></button>
+      </form>
+    </div>
+  </div>
+</div>

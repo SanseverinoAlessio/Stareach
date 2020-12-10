@@ -1,0 +1,142 @@
+<div style="min-height:100%;">
+  <div class="container-fluid">
+    <div class="task_choose">
+      <ul>
+        <li><a class="section_link" (click)="switchSection('todo')" [class.active]="section=='todo'">Da fare ({{tasks | taskNotComplCounter}})</a></li>
+        <li><a class="section_link" (click)="switchSection('completed')" [class.active]="section=='completed'">Completate ({{tasks | taskComplCounter}})</a></li>
+      </ul>
+    </div>
+    <div class="mid-section">
+      <button (click)="openCreateListMenu();"   class="add_categories_button"> <img class="icon" src="../../assets/Icon/clipboard.svg">  Aggiungi</button>
+    </div>
+    <div style="max-width:1500px" class="content">
+      <app-create-list (addNewList)="addNewList($event)" (close)="closeCreateListMenu()" [listMenu]="listMenuState"></app-create-list>
+      <app-create-task [listId]="listId" (newTask)="addTaskInArr($event)" (close)="closeTaskMenu();" [taskMenu]="taskMenuState"></app-create-task>
+      <app-update-task (updated)="updateTaskInArr($event)" (close)="closeUpdateTask();" [open]="openUpdateTask" [singleTask]="singleTask"  ></app-update-task>
+      <div id="todo_section" *ngIf="section=='todo'"  class="lists row">
+        <div [@listAnim] *ngFor="let list of lists"  class="list-container col-xl-4 col-lg-6 col-md-12">
+          <div  id="{{list.id}}" class="list slide">
+            <div class="list-Header">
+              <span style="position:absolute">
+                <img (click)="setReadOnlyOff($event)" class="edit_icon" src="../../assets/Icon/Edit.svg">
+              </span>
+              <input id="{{list.id}}" maxlength="16" (keydown)="setReadOnlyTrue($event,true,list.id);" readonly
+              class="list_name" value="{{list.name}}">
+              <div class="d-flex listUpdateIcons" style="position:absolute">
+                <span class="listUpdateIcon">
+                  <img class="listUpdateIconImg" (click)="updateListName($event,list.id);" src="../../assets/Icon/green_check.svg">
+                </span>
+                <span  class="listUpdateIcon">
+                  <img class="listUpdateIconImg" (click)="cancelUpdateList($event,list.id);"  src="../../assets/Icon/cancel.svg">
+                </span>
+              </div>
+              <span  style="right:0; margin-top:-35px;position:absolute; margin-right:15px">
+                <img (click)="deleteList($event,list.id);" class="exit" src="../../assets/Icon/delete.svg">
+              </span>
+            </div>
+            <div class="tasks_container">
+              <ul class="tasks">
+                <li [@taskAnim]  *ngFor="let task of tasks | filterById:list.id" id="{{task.id}}"  class="task ">
+                  <ul class="task_content">
+                    <li class="status_item">
+                      <span  class="status">
+                        <img (click)="setCompleted($event,task)" src="../../assets/Icon/task_not_completed.svg">
+                      </span>
+                    </li>
+                    <li class="name_item">  <span class="name">{{task.name}}</span> </li>
+                    <div class="d-flex">
+                      <li class="importance_item">
+                        <span [class.green]="task.importance == 'Importante' ? false : true"
+                        [class.red]="task.importance == 'Importante' ? true : false " class="importance">{{task.importance}}</span>
+                      </li>
+                      <li class="menu_item">
+                        <span (click)="showEllipsisMenu($event)" class="menu_button">
+                          <img class="menu_Button_Img" src="../../assets/Icon/ellipsis.svg">
+                        </span> </li>
+                        <li>
+                          <div style="position:relative; ;z-index:998">
+                            <div class="menu">
+                              <ul>
+                                <li>
+                                  <a (click)="deleteTask($event,task.id);">Elimina</a>
+                                </li>
+                                <li>
+                                  <a (click)="openUpdateTaskMenu(task)">Modifica</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                      </div>
+                    </ul>
+                  </li>
+                </ul>
+                <a (click)="openTaskMenu(list.id)" class="add_task_button">Aggiungi impegno <img src="../../assets/Icon/clipboard_blue.svg"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="completed_section" *ngIf="section=='completed'"  class="lists row">
+          <div [@listAnim]  id="{{list.id}}" *ngFor="let list of lists"  class="list-container col-xl-4 col-lg-6 col-md-12">
+            <div class="list slide">
+              <div class="list-Header">
+                <span style="position:absolute ">
+                  <img (click)="setReadOnlyOff($event)" class="edit_icon" src="../../assets/Icon/Edit.svg">
+                </span>
+                <input  maxlength="16" (keydown)="setReadOnlyTrue($event,true);"  readonly class="list_name" value="{{list.name}}">
+                <div class="d-flex listUpdateIcons" style="position:absolute">
+                  <span (click)="setReadOnlyTrue($event);" class="listUpdateIcon">
+                    <img (click)="updateListName($event,list.id);" src="../../assets/Icon/green_check.svg">
+                  </span>
+                  <span  class="listUpdateIcon">
+                    <img class="listUpdateIconImg" (click)="cancelUpdateList($event,list.id);"  src="../../assets/Icon/cancel.svg">
+                  </span>
+                </div>
+                <span  style="right:0; margin-top:-37px;position:absolute;margin-right:15px">
+                  <img (click)="deleteList($event,list.id);" class="exit" src="../../assets/Icon/delete.svg">
+                </span>
+              </div>
+              <div class="tasks_container">
+                <ul class="tasks">
+                  <li [@taskAnim]  *ngFor="let task of tasks | completed:list.id" id="{{task.id}}"  class="task ">
+                    <ul class="task_content">
+                      <li class="status_item">
+                        <span  class="status">
+                          <img (click)="setNotCompleted($event,task)" src="../../assets/Icon/task_completed.svg">
+                        </span>
+                      </li>
+                      <li class="name_item">  <span class="name">{{task.name}}</span> </li>
+                      <div class="d-flex">
+                        <li class="importance_item">
+                          <span [class.green]="task.importance == 'Importante' ? false : true"
+                          [class.red]="task.importance == 'Importante' ? true : false " class="importance">{{task.importance}}</span>
+                        </li>
+                        <li class="menu_item">
+                          <span (click)="showEllipsisMenu($event)" class="menu_button">
+                            <img class="menu_Button_Img" src="../../assets/Icon/ellipsis.svg">
+                          </span> </li>
+                          <li>
+                            <div style="position:relative; ;z-index:998">
+                              <div class="menu">
+                                <ul>
+                                  <li>
+                                    <a (click)="deleteTask($event,task.id);">Elimina</a>
+                                  </li>
+                                  <li>
+                                    <a (click)="openUpdateTaskMenu(task)">Modifica</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </li>
+                        </div>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

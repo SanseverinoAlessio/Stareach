@@ -1,0 +1,12 @@
+<svg id="clock" xmlns="http://www.w3.org/2000/svg" width="48.516" height="48.516" viewBox="0 0 48.516 48.516">
+  <g id="Raggruppa_2" data-name="Raggruppa 2">
+    <g id="Raggruppa_1" data-name="Raggruppa 1">
+      <path id="Tracciato_7" data-name="Tracciato 7" d="M24.258,0A24.258,24.258,0,1,0,48.516,24.258,24.258,24.258,0,0,0,24.258,0Zm0,45.05A20.792,20.792,0,1,1,45.05,24.258,20.792,20.792,0,0,1,24.258,45.05Z" fill="#2f5280"/>
+    </g>
+  </g>
+  <g id="Raggruppa_4" data-name="Raggruppa 4" transform="translate(8.663 8.663)">
+    <g id="Raggruppa_3" data-name="Raggruppa 3">
+      <path id="Tracciato_8" data-name="Tracciato 8" d="M100.927,85.333a1.733,1.733,0,0,0-1.733,1.733V99.195H87.066a1.733,1.733,0,1,0,0,3.465h13.862a1.733,1.733,0,0,0,1.733-1.733V87.066A1.733,1.733,0,0,0,100.927,85.333Z" transform="translate(-85.333 -85.333)" fill="#2f5280"/>
+    </g>
+  </g>
+</svg>

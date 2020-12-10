@@ -1,0 +1,27 @@
+<header>
+  <nav [class.active]="this.scroll > 150 ? true : false">
+    <div style="width:100%" class="d-flex ">
+      <div [class.deactive]="deactive" [class.active]="sidebar" (click)="setSidebar();" class="hamburger_menu">
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+      <div>
+        <a routerLink="/home"><img class="nav_logo" src="../../assets/Logo.svg"> </a>
+      </div>
+      <ul *ngIf="mobile ==false" class="navigation_links">
+        <li><a routerLinkActive="active" routerLink="/home" href="#">Home</a></li>
+        <li><a routerLinkActive="active" routerLink="/accedi" href="#">Login</a></li>
+        <li><a routerLinkActive="active" routerLink="registrati" href="#">Registrati</a></li>
+      </ul>
+    </div>
+    <div [@sidebarTrigger]="sidebar== true ? 'openSidebar' : 'closedSidebar'" [class.active]="sidebar"  *ngIf="mobile ==true" class="sidebar">
+      <h2>Navigazione</h2>
+      <ul  class="navigation_links">
+        <li><a routerLinkActive="active" routerLink="/home" href="#">Home</a></li>
+        <li><a routerLinkActive="active" routerLink="/accedi" href="#">Login</a></li>
+        <li><a routerLinkActive="active" routerLink="registrati" href="#">Registrati</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,65 @@
+<div style="padding:0px !important;min-height:90vh" class="container-fluid">
+  <div style="min-height:90vh; margin:0px !important" class="row">
+    <div style="padding:0px !important;" class="col-md-6 img-col">
+      <img style="width:100%;height:100%;object-fit:cover" src="../../assets/Images/write-593333_1280.jpg">
+    </div>
+    <div style="margin:0px !import; background-color:#2F5280 !important" class="col-md-6">
+      <div style="height:100%;padding-top:130px" class="container d-flex align-items-center homepage_section1_content">
+        <div class="col-md-9">
+          <div class="circle"></div>
+          <h1 [ngsReveal]="{reset:true}">
+            Hai bisogno di organizzare i tuoi impegni?
+          </h1>
+          <p [ngsReveal]="{reset:true}">Registrati e scopri un nuovo modo di gestire il tuo tempo! <br>
+          Stareach ti permette di creare tutte le liste di cui hai bisogno, ed inoltre, hai la possibilità di scegliere che importanza
+        attribuire ai tuoi impegni.</p>
+            <a [ngsReveal]="{reset:true}" class="register_button" routerLink="/registrati" >Registrati</a>
+            <p [ngsReveal]="{reset:true}" style="margin-top:30px !important; color:white ">Sei già registrato? <a routerLink="/accedi" style="color: #98B939;text-decoration:none !important">Accedi</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="padding-top:100px" id="section2" class="container-fluid">
+    <div  class="container">
+      <div [ngsRevealSet]="{ reset:true, distance: '-30px',scale:1}" [ngsSelector]="'.anim'" [ngsInterval]="100" class="row">
+        <div style="margin-bottom:100px" class="col-md-6">
+          <div  class="d-flex align-items-start">
+            <img class="anim" src="../../assets/Icon/study.svg" alt="definisci">
+            <div class="information anim">
+              <h2>Definisci le tue liste</h2>
+              <p>Definisci le tue liste ed aggiungi i tuoi impegni!</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-bottom:100px" class="col-md-6">
+            <div class="d-flex align-items-start">
+              <img class="anim" src="../../assets/Icon/calendar.svg" alt="definisci">
+              <div class="information anim">
+                <h2>Pianifica</h2>
+                <p>Inizia a pianificare ciò che dovrai svolgere nei giorni successivi.</p>
+                </div>
+              </div>
+            </div>
+            <div style="margin-bottom:100px" class="col-md-6">
+              <div class="d-flex align-items-start">
+                <img class="anim" src="../../assets/Icon/clock.svg" alt="definisci">
+                <div class="information anim">
+                  <h2>Gestisci meglio il tuo tempo</h2>
+                  <p>Con l'uso continuativo di questa applicazione, avrai la possibilità di analizzare e gestire meglio il tuo tempo.</p>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-bottom:100px" class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <img class="anim" src="../../assets/Icon/target.svg" alt="definisci">
+                  <div class="information anim">
+                    <h2>Raggiungi i tuoi obiettivi</h2>
+                    <p>Attribuendo il giusto tempo e completando gli impegni da te inseriti, avrai sicuramente modo di raggiungere i tuoi obiettivi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<app-footer></app-footer>

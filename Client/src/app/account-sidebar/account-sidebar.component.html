@@ -1,0 +1,27 @@
+<div (click)="closeSidebar();" [@blackscreen]="blackScreenState == true ? 'fadeIn' : 'fadeOut' " id="black-screen"></div>
+
+
+<div class="sidebar_container" style="position:relative;width:350px ">
+<div [class.active]="sidebarState" [class.deactive]="hamburgerMenuDeactive" (click)="setSidebar()"  class="hamburger_menu">
+  <i></i>
+  <i></i>
+  <i></i>
+</div>
+
+<div [class.deactive]="deactive" [class.active]="sidebarState" id="sidebar">
+  <div style="width:inherit; padding-top:40px;" class="d-flex flex-column align-items-center" >
+    <div>
+    <img class="img-circle" src="{{avatarUrl}}" >
+    <p class="name">Benvenuto <b>{{name}}!</b></p>
+    <h2 class="nav-title">Navigazione</h2>
+</div>
+<div class="navigation-section ">
+<ul>
+<li><a routerLinkActive="active" routerLink="/account/tasks"> <img class="sidebar-icon" src="assets/Icon/clipboard.svg">Le tue liste</a></li>
+<li><a routerLinkActive="active" routerLink="/account/settings"><img class="sidebar-icon" src="assets/Icon/settings.svg">Impostazioni</a></li>
+<li><a routerLinkActive="active" routerLink="/logout"><img class="sidebar-icon" src="assets/Icon/logout.svg">Esci</a></li>
+</ul>
+</div>
+  </div>
+</div>
+</div>

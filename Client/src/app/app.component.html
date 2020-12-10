@@ -1,0 +1,4 @@
+
+<app-navigation (closed)="sidebarClosed();" [closeSidebar]="closeSidebar" *ngIf="router.url != '/account' && router.url != '/account/tasks' && router.url != '/account/settings'  " ></app-navigation>
+
+<router-outlet></router-outlet>

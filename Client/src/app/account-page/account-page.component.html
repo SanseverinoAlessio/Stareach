@@ -1,0 +1,11 @@
+<div id="bg"></div>
+
+<div style="min-height:100vh; position:relative; width:100%; " class="d-flex">
+<app-account-sidebar (closed)="sidebarClosed();" [closeSidebarBool]="closeSidebar"></app-account-sidebar>
+
+<div class="content container-fluid">
+<router-outlet></router-outlet>
+</div>
+
+
+</div>

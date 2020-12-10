@@ -1,0 +1,7 @@
+footer{min-height: 170px; background-color: #6E9400;z-index: 998; position: relative;}
+footer h3{color: white !important; font-size: 2rem; font-weight: 700;}
+footer h3::after{display: block; content:''; height: 3px; background-color: white;}
+footer h4{color: #F2EBEB}
+.githubIcon{width: 30px; height: 30px}
+.social{margin-top: 20px; margin-bottom: 20px;}
+.social a{color: black; text-decoration: none; margin-left: 10px; margin-top: 3px;font-weight: 700;font-size: 1.2rem;}

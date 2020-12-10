@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31" height="31" viewBox="0 0 31 31">
+  <defs>
+    <filter id="Ellisse_12" x="0" y="0" width="31" height="31" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Edit" transform="translate(-426 -344)">
+    <g transform="matrix(1, 0, 0, 1, 426, 344)" filter="url(#Ellisse_12)">
+      <circle id="Ellisse_12-2" data-name="Ellisse 12" cx="6.5" cy="6.5" r="6.5" transform="translate(9 6)" fill="#fff"/>
+    </g>
+    <g id="edit-button" transform="translate(438.315 353.486)">
+      <path id="Tracciato_95" data-name="Tracciato 95" d="M349.421.055a.185.185,0,0,0-.262,0L348.5.711l1.311,1.311.655-.655a.185.185,0,0,0,0-.262Z" transform="translate(-344.196 -0.001)" fill="#98b939"/>
+      <path id="Tracciato_96" data-name="Tracciato 96" d="M57.426,81.978l1.311,1.311,3.335-3.335-1.311-1.311Zm3.728-2.418a.185.185,0,0,1,0,.262l-2.549,2.549a.185.185,0,1,1-.262-.262l2.549-2.549A.185.185,0,0,1,61.154,79.561Z" transform="translate(-56.716 -77.671)" fill="#98b939"/>
+      <path id="Tracciato_97" data-name="Tracciato 97" d="M.5,373.771l-.488,1.464a.185.185,0,0,0,.235.234l1.464-.488Z" transform="translate(0.001 -369.152)" fill="#98b939"/>
+    </g>
+  </g>
+</svg>

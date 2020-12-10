@@ -1,0 +1,70 @@
+<div id="bg-filter"></div>
+<div class="bg container-fluid">
+  <div class="user-area">
+    <div class="" style="width:100%">
+      <div class="user-data-content">
+        <h2>Registrati</h2>
+        <ul class="links">
+          <li><a routerLink="/accedi"  >Accedi</a></li>
+          <li><a class="active">Registrati</a></li>
+        </ul>
+        <div [@sectionAnim] class="inputs">
+        <form [formGroup]="registerForm" >
+          <div>
+            <div class="d-flex">
+            <img style="margin-top:25px" class="iconInput" src="../../assets/Icon/user.svg">
+            <input placeholder="Inserisci il nome utente" formControlName="nome">
+            <img *ngIf="!registerForm.controls.nome.errors" class="verifiedIcon" src="../../assets/Icon/verified.svg">
+            <img *ngIf="registerForm.controls.nome.errors && registerForm.controls.nome.dirty" class="verifiedIcon" src="../../assets/Icon/wrong.svg">
+                </div>
+            <p *ngIf="registerForm.controls.nome.errors && registerForm.controls.nome.errors.minlength || registerForm.controls.nome.errors && registerForm.controls.nome.errors.maxlength" class="error">Il nome deve essere compreso tra 4 ai 16 caratteri</p>
+          </div>
+          <div>
+            <div class="d-flex">
+            <img style="margin-top:25px"  class="iconInput" src="../../assets/Icon/email.svg">
+            <input type="text" placeholder="Inserisci la tue email" formControlName="email">
+            <img *ngIf="!registerForm.controls.email.errors" class="verifiedIcon" src="../../assets/Icon/verified.svg">
+            <img *ngIf="registerForm.controls.email.errors && registerForm.controls.email.dirty" class="verifiedIcon" src="../../assets/Icon/wrong.svg">
+
+            </div>
+            <p *ngIf="registerForm.controls.email.errors && registerForm.controls.email.errors.email" class="error">L'email non è valida</p>
+            <p class="error" *ngIf="registerForm.controls.email.errors && registerForm.controls.email.errors.uniqueEmail">L'email è già stata utilizzata</p>
+          </div>
+          <div>
+            <div class="d-flex">
+              <img style="margin-top:25px" class="iconInput" src="../../assets/Icon/key.svg">
+              <input style="padding-right:33px" type="password" placeholder="Inserisci la tua password" formControlName="password">
+              <img  (click)="Password_toggle($event)" class="password_eye" src="../../assets/Icon/password-reveal-off.svg">
+              <img *ngIf="!registerForm.controls.password.errors" class="verifiedIcon" src="../../assets/Icon/verified.svg">
+              <img *ngIf="registerForm.controls.password.errors && registerForm.controls.password.dirty" class="verifiedIcon" src="../../assets/Icon/wrong.svg">
+
+            </div>
+            <p class="error" *ngIf="registerForm.controls.password.errors && registerForm.controls.password.errors.pattern">La password deve contenere almeno una lettera maiuscola e due numeri</p>
+
+          </div>
+          <div>
+            <div class="d-flex">
+            <img  style="margin-top:25px" class="iconInput" src="../../assets/Icon/key.svg">
+            <input  style="padding-right:33px"  type="password" placeholder="Ripeti password" formControlName="repeat_password">
+            <img (click)="Password_toggle($event);" class="password_eye" src="../../assets/Icon/password-reveal-off.svg">
+            <img *ngIf="!registerForm.controls.repeat_password.errors" class="verifiedIcon" src="../../assets/Icon/verified.svg">
+            <img *ngIf="registerForm.controls.repeat_password.errors && registerForm.controls.repeat_password.dirty" class="verifiedIcon" src="../../assets/Icon/wrong.svg">
+
+
+            </div>
+            <p class="error" *ngIf="registerForm.controls.repeat_password.errors && registerForm.controls.repeat_password.errors.notEqual">Le password non sono uguali</p>
+          </div>
+          <div style="position:relative; height:80px">
+            <button  [class.success]="completed" [@btnAnim]="buttonState" (click)="submit();" [disabled]="isValid() && registerTextBtn !== 'Success'"  type="submit">{{registerTextBtn}}</button>
+            <img  *ngIf="spinner"  class="spinner" src="../../assets/Icon/spinner.svg" alt="">
+          </div>
+          <!-- <p *ngIf="completed" class="success" >La registrazione è andata a buon fine!</p> -->
+
+
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

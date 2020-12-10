@@ -1,0 +1,140 @@
+
+nav{position: fixed; width: 100%; height: 110px!important;background-color: #F1F1F1;z-index: 999; transition: 0.5s;}
+nav li{display: inline-block;margin-right: 5px !important}
+nav ul{padding-top: 50px;}
+nav{display: flex;padding-left: 50px;}
+nav li a{color: black !important;padding: 13px; text-decoration: none !important; border-radius: 13px; transition: 0.5s;font-weight: 700}
+nav li a.active{color: white !important; background-color:#98B939;}
+nav.active .nav_logo{width:150px; height: 185px;margin-top: -35px !important}
+nav li a:hover{color: white !important; background-color:#98B939;}
+.nav_logo{transition: 0.6s;width:120px; height: 120px;margin-right: 60px; margin-top: 0px !important}
+.hamburger_menu{position: absolute;;z-index: 1000;padding-top: 65px;display: none; margin: auto; cursor: pointer;}
+.hamburger_menu i{content: '';display: block !important;height: 4px; width: 30px; background-color: black;border-radius: 10px}
+.hamburger_menu i:nth-last-of-type(2){margin: 5px 0px}
+.sidebar{z-index: 999;transition: 0.8s;display: block !important; position: absolute;
+  background-color: #2F5280 !important; height: 100vh; width: 100%; left: 0;}
+  .sidebar ul li{display: block; margin-bottom: 20px;}
+  .sidebar ul{padding-top: 50px;}
+
+
+  .hamburger_menu.deactive i:nth-of-type(1){
+    animation-name: hamburgerMenuFirstOut;
+    animation-duration: 0.8s;
+    animation-fill-mode:backwards;
+    animation-direction: reverse;
+  }
+
+
+
+  .hamburger_menu.active i:nth-of-type(1){
+    animation-name: hamburgerMenuFirst;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+  }
+
+  .hamburger_menu.deactive i:nth-of-type(2){
+    animation-name: hamburgerMenuSecondOut;
+    animation-duration: 0.8s;
+    animation-fill-mode: backwards;
+    animation-direction: reverse;
+  }
+
+  .hamburger_menu.active i:nth-of-type(2){
+    animation-name: hamburgerMenuSecond;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+  }
+
+
+  .hamburger_menu.deactive i:nth-of-type(3){
+    animation-name: hamburgerMenuThirdOut;
+    animation-duration: 0.8s;
+    animation-fill-mode:backwards;
+    animation-direction:reverse;
+  }
+
+  .hamburger_menu.active i:nth-of-type(3){
+    animation-name: hamburgerMenuThird;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+  }
+
+
+
+  @keyframes hamburgerMenuFirst {
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(9px) rotate(0deg);background-color: black}
+    100%{transform: translateY(9px) rotate(45deg); background-color: white;}
+
+
+
+  }
+
+  @keyframes hamburgerMenuFirstOut {
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(9px) rotate(0deg);background-color: black}
+    100%{transform: translateY(9px) rotate(45deg); background-color: white}
+
+
+
+  }
+
+
+  @keyframes hamburgerMenuSecond {
+
+    50%{transform: rotate(0deg);;background-color: black}
+    100%{transform: rotate(-45deg); background-color: white}
+
+
+
+  }
+
+  @keyframes hamburgerMenuSecondOut {
+    50%{transform:rotate(0deg);background-color: black}
+    100%{transform: rotate(-45deg);background-color: white}
+
+
+
+  }
+
+
+
+
+  @keyframes hamburgerMenuThird {
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-9px) rotate(0deg);background-color: black }
+    100%{transform: translateY(-9px) rotate(45deg);background-color: white}
+
+
+
+  }
+
+  @keyframes hamburgerMenuThirdOut {
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-9px) rotate(0deg);background-color: black }
+    100%{transform: translateY(-9px) rotate(45deg);background-color: white}
+
+
+
+  }
+
+
+
+
+
+  @media only screen and (max-width: 768px) {
+    .nav_logo{margin-left: 60px !important}
+    .sidebar h2{text-align: center; padding-top: 110px; color: white; font-weight: 700;font-size: 2.4rem;}
+    .hamburger_menu{display: block;   }
+    nav{padding-left: 20px}
+    .sidebar ul{text-align: center;padding-left: 0px !important}
+    .sidebar ul li a{padding: 15px 70px 15px 70px; color: white !important;
+    }
+    .sidebar ul li a.active{box-shadow: 0px 2px 5px 0px rgba(41,41,41,0.67);}
+    .sidebar ul li a:hover{box-shadow: 0px 2px 5px 0px rgba(41,41,41,0.67);color: white !important; background-color:#98B939;}
+    .sidebar ul li{padding-bottom: 10px}
+
+  }

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+  <g id="task_not_completed" transform="translate(-441 -294)">
+    <g id="Ellisse_10" data-name="Ellisse 10" transform="translate(441 294)" fill="#fff" stroke="#b8b8b8" stroke-width="1">
+      <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+      <circle cx="8.5" cy="8.5" r="8" fill="none"/>
+    </g>
+    <path id="check" d="M3.7,7.762a.493.493,0,0,1-.7,0L.217,4.977a.739.739,0,0,1,0-1.046l.349-.349a.739.739,0,0,1,1.046,0L3.35,5.32l4.7-4.7a.739.739,0,0,1,1.046,0l.349.349a.739.739,0,0,1,0,1.046Zm0,0" transform="translate(445 298.594)" fill="#b8b8b8"/>
+  </g>
+</svg>

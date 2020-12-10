@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="38" viewBox="0 0 38 38">
+  <defs>
+    <filter id="Ellisse_11" x="0" y="0" width="38" height="38" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="delete" transform="translate(-724 -340)">
+    <g transform="matrix(1, 0, 0, 1, 724, 340)" filter="url(#Ellisse_11)">
+      <circle id="Ellisse_11-2" data-name="Ellisse 11" cx="10" cy="10" r="10" transform="translate(9 6)" fill="#a50909"/>
+    </g>
+    <g id="cross" transform="translate(738.735 351.735)">
+      <path id="Tracciato_88" data-name="Tracciato 88" d="M8.243.981,7.262,0,4.122,3.141.981,0,0,.981,3.141,4.122,0,7.262l.981.981L4.122,5.1,7.262,8.243l.981-.981L5.1,4.122Z" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,90 @@
+#sidebar{width: 350px; min-height: 100vh; background-color: #2F5280;position: fixed;}
+.content{background-color: #F2F2F2 !important}
+.img-circle{width: 180px; height: 180px; border-radius: 100%;border:#98B939 5px solid; object-position: center center;object-fit: cover}
+.name{color: white !important; padding-top:30px; font-size: 1.3rem;  }
+.nav-title{padding-top: 40px;color: white;font-weight: 700;font-size: 1.7rem;padding-bottom: 30px;}
+.navigation-section ul{padding: 0px; display: block; list-style: none !important;margin-left: -40px}
+.navigation-section a{transition: 0.6s;text-decoration: none !important;padding: 15px 25px 15px 25px;color: white;border-radius: 20px; font-weight: 700;}
+.navigation-section li{display: block;margin-bottom: 30px}
+.navigation-section a.active{background-color: #073166}
+.navigation-section a:hover{background-color: #073166 }
+.sidebar-icon{margin-right: 10px; width: 25px; height: 25px}
+.hamburger_menu{position: absolute;;z-index: 1000;padding-top: 20px; margin: auto; cursor: pointer;margin-left: 10px; display: none}
+.hamburger_menu i{content: '';display: block !important;height: 4px; width: 30px; background-color: black;border-radius: 10px}
+.hamburger_menu i:nth-last-of-type(2){margin: 5px 0px}
+.hamburger_menu.deactive i:nth-of-type(1){
+  animation-name: hamburgerMenuFirstOut;
+  animation-duration: 0.8s;
+  animation-fill-mode:backwards;
+  animation-direction: reverse;
+}
+#black-screen{background-color: black; position: fixed; width: 100%; min-height: 100vh;z-index: 998;}
+.hamburger_menu.active i:nth-of-type(1){
+  animation-name: hamburgerMenuFirst;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+.hamburger_menu.deactive i:nth-of-type(2){
+  animation-name: hamburgerMenuSecondOut;
+  animation-duration: 0.8s;
+  animation-fill-mode: backwards;
+  animation-direction: reverse;
+}
+.hamburger_menu.active i:nth-of-type(2){
+  animation-name: hamburgerMenuSecond;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+.hamburger_menu.deactive i:nth-of-type(3){
+  animation-name: hamburgerMenuThirdOut;
+  animation-duration: 0.8s;
+  animation-fill-mode:backwards;
+  animation-direction:reverse;
+}
+.hamburger_menu.active i:nth-of-type(3){
+  animation-name: hamburgerMenuThird;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+@keyframes hamburgerMenuFirst {
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(9px) rotate(0deg);background-color: black}
+  100%{transform: translateY(9px) rotate(45deg); background-color: white;}
+}
+@keyframes hamburgerMenuFirstOut {
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(9px) rotate(0deg);background-color: black}
+  100%{transform: translateY(9px) rotate(45deg); background-color: white}
+}
+@keyframes hamburgerMenuSecond {
+
+  50%{transform: rotate(0deg);;background-color: black}
+  100%{transform: rotate(-45deg); background-color: white}
+}
+@keyframes hamburgerMenuSecondOut {
+  50%{transform:rotate(0deg);background-color: black}
+  100%{transform: rotate(-45deg);background-color: white}
+}
+@keyframes hamburgerMenuThird {
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-9px) rotate(0deg);background-color: black }
+  100%{transform: translateY(-9px) rotate(45deg);background-color: white}
+}
+@keyframes hamburgerMenuThirdOut {
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-9px) rotate(0deg);background-color: black }
+  100%{transform: translateY(-9px) rotate(45deg);background-color: white}
+}
+@media only screen and (max-width: 800px) {
+  .sidebar_container{width: 0px !important}
+  .hamburger_menu{display: block}
+  #sidebar{position: fixed; transform: translateX(-500px);visibility:hidden;opacity: 0; z-index: 999;height: 100% !important;}
+  #sidebar.active{transform: translateX(0px); visibility: visible; opacity: 1;transition: 0.6s;}
+  #sidebar.deactive{transition: 0.6s;}
+}
+@media only screen and (max-width: 450px) {
+  #sidebar{width: 100vw !important}
+}

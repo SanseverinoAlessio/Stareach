@@ -1,0 +1,30 @@
+<div (click)="closeMenu();" [@blackScreenAnim]="taskMenu == false ? 'hide' : 'show'" id="black_screen"></div>
+<div  [class.active]="taskMenu"  style="width:100%;" class="d-flex justify-content-center create_Task_Container">
+  <div *ngIf="taskMenu"   [@windowToggle] class="create_task">
+    <div class="create_task_header">
+      <h2>Aggiungi impegno</h2>
+      <span (click)="closeMenu();"  style="float:right; margin-top:-45px">
+        <img class="exit" src="../../assets/Icon/delete.svg">
+      </span>
+    </div>
+    <div style="padding-top:30px; padding-left:30px; padding-right:30px">
+      <form  [formGroup]="taskForm"  (ngSubmit)="submit()">
+        <label>Nome della dell'impegno</label>
+        <div class="d-flex">
+          <img class="icon" src="../../assets/Icon/clipboard_grey.svg">
+          <input autofocus formControlName="taskName" name="taskName" maxlength="30" #taskInput placeholder="Inserisci l'impegno" type="text" >
+        </div>
+        <div class="">
+          <label style="display:block; margin-top:20px">Importanza</label>
+          <select formControlName="importance" name="importance" class="importance" style="display:block !important">
+            <option >Importante</option>
+            <option>Trascurabile</option>
+          </select>
+        </div>
+        <p style="margin-top:10px; margin-bottom:0px !important" class="error"></p>
+        <button [disabled]="validInput()"  type="submit" id="confirm_button">Conferma <span><img  src="../../assets/Icon/check.svg"></span></button>
+      </form>
+    </div>
+
+</div>
+</div>

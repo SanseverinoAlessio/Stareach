@@ -1,0 +1,36 @@
+<div id="bg-filter"></div>
+<div class="bg container-fluid">
+  <div class="user-area">
+    <div class="" style="width:100%">
+      <div class="user-data-content">
+        <h2>Accedi</h2>
+        <ul class="links">
+          <li><a class="active" >Accedi</a></li>
+          <li><a  routerLink="/registrati">Registrati</a></li>
+        </ul>
+        <div [@sectionAnim] class="inputs">
+        <form [formGroup]="userForm" (ngSubmit)="submit">
+          <div>
+            <img class="iconInput" src="../../assets/Icon/email.svg">
+            <input placeholder="Inserisci la tua email" formControlName="email">
+          </div>
+          <div>
+            <div class="d-flex">
+              <img class="iconInput" src="../../assets/Icon/key.svg">
+              <input type="password" placeholder="Inserisci la tua password" formControlName="password">
+              <img  (click)="Password_toggle($event)" class="password_eye" src="../../assets/Icon/password-reveal-off.svg">
+            </div>
+          </div>
+          <p style="margin-top:-10px; margin-bottom:30px" class="error">{{error}}</p>
+          <p  id="forgot-password">Hai dimenticato la password? <a  routerLink="/reset_password">Clicca qui!</a></p>
+          <div style="height:70px">
+            <button [class.success]="success==true" [class.error]="animState=='error'" [@btnAnim]="animState" [disabled]="isValid()" (click)="submit();"  type="submit">{{loginTextBtn}}</button>
+            <img *ngIf="spinner" class="spinner" src="../../assets/Icon/spinner.svg" alt="">
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

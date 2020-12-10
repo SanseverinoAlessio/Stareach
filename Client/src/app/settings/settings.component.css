@@ -1,0 +1,92 @@
+#bg{background-color: #F2F2F2;min-height: 100vh; padding: 0px !important; margin: 0px !important;}
+.settings-container{background-color: #FFFFFF;width: 600px; min-height: 600px;
+  box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.36);
+  ;border-radius: 20px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  overflow: hidden;
+}
+.settings_section{width: 500px}
+#settings-content{padding:40px 40px 20px 40px}
+#settings-content h2{color: #98B939; font-weight: 700; font-size: 2.3rem;}
+#settings-content p{font-size: 1.1rem;color: #464646;}
+#dati{padding-top: 20px; margin-bottom: 50px;}
+h3{font-size: 1.6rem;font-weight: 700;padding-bottom: 15px}
+input{padding-left: 29px;display: block; border: none !important; width: 100%;padding-right: 40px;
+  border-bottom: #98B939 2px solid !important;outline: none !important; margin-bottom: 24px}
+  #password-section{padding-top: 20px}
+  .inputIcon{width: 20px; height: 20px;position: absolute;opacity: 0.60;}
+  .input-container{position: relative;}
+  .input-container:last-of-type{margin-bottom: 50px}
+  #white_screen{opacity:0 ; width: 600px;
+    position: absolute;z-index: 999; background-color: white;
+    height: 600px;
+    visibility: hidden;}
+    #white_screen img{ position: absolute;}
+    #white_screen.active{visibility: visible;opacity: 0.5;}
+    #avatar-section{padding-top: 20px; padding-bottom: 50px}
+    .avatar{width: 110px; height: 110px; border-radius: 100%; margin-bottom: 40px; object-position: center center; object-fit: cover;}
+    .upload-avatar{margin-top: 30px;
+      margin-left: 20px;
+      color: white;
+      background-color: #2F5280;
+      height: 30px;
+      padding-top:3px;
+      padding-bottom: 3px;
+      font-weight: 700;font-size: 1rem;
+      width: 70px; text-align: center;
+      border-radius: 20px;
+      text-decoration: none;box-shadow:  -2px 3px 5px -1px rgba(0,0,0,0.36);
+    }
+    .save{border: #2F5280 2px solid; padding: 10px;border-radius: 10px;
+      text-decoration: none; font-weight: 700;
+      box-shadow: -2px 3px 5px -1px rgba(0,0,0,0.26);
+      cursor: pointer;color: #2F5280;
+      transition: 0.5s;
+      background-color: white;
+    }
+    .save:hover{background-color: #2F5280; color: white;}
+    .save:disabled{opacity: 0.7; border: grey solid 2px !important; color: grey !important; background: transparent !important; cursor: default !important;}
+    .save:disabled:hover{background-color: white !important;}
+    #settings-navigation li{display: inline-block;padding-right: 14px; list-style: none}
+    #settings-navigation ul{padding: 0px}
+    #settings-navigation a{font-size: 1.2rem;text-decoration: none !important; color: black; transition: 0.6s;font-weight: 700; cursor:pointer }
+    #settings-navigation{padding-top: 15px}
+    #settings-navigation a:hover{color: #2F5280}
+    #settings-navigation a::after{display: block;;content: '';width: 0%; height: 3px; transition: 0.5s !important;background-color: #2F5280;}
+    #settings-navigation a:hover::after{ width: 100%;}
+    #settings-navigation a.active{color:#2F5280 }
+    #settings-navigation a.active::after{ width: 100%;}
+    p.error{color: #d11e11 !important;margin-top: -10px;}
+    p.success{color: #128f06 !important; margin-top: -10px}
+    .delete_avatar{margin-left: 25px; color: #d11e11 !important; text-decoration: none !important; cursor: pointer;
+      font-weight: 700; transition: 0.5s;border-radius: 10px; padding: 10px; }
+      .delete_avatar:hover{background-color: #d11e11; color: white !important}
+      .password_eye{cursor: pointer;position: absolute;right: 0; margin-top: 0px; margin-right:10px;width: 25px; height: 25px}
+
+      input[type="file"]{
+        padding-top: 20px
+      }
+      ::ng-deep #scrollbar .scrollbar-control{margin-top: 20px; margin-bottom: 20px}
+      #scrollbar{
+        --scrollbar-thumb-color: #2F5280;
+        --scrollbar-size: 5px;
+        --scrollbar-padding: 5px;
+      }
+      @media only screen and (max-width: 860px) {
+        .settings-container{width: 400px}
+        .settings_section{width: 350px}
+        #white_screen{width: 400px}
+      }
+      @media only screen and (max-width: 350px) {
+       .password_eye{margin-right: 60px}
+       input{padding-right: 30px;width: 80%}
+
+      }
+
+
+      @media only screen and (max-width: 400px) {
+        .settings_section{width: 320px !important}
+        .settings-container{width: 100%}
+        #white_screen{width: 100%}
+      }

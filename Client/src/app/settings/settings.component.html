@@ -1,0 +1,83 @@
+<div id="bg" class="container-fluid d-flex justify-content-center align-items-center">
+  <div  class="settings-container" >
+
+    <div [class.active]="loading"  class="d-flex justify-content-center align-items-center" id="white_screen">
+      <img class="spinner" src="../../assets/Icon/spinner.svg" alt="">
+    </div>
+    <div >
+      <div id="settings-content">
+        <h2>Impostazioni</h2>
+        <p>In questa pagina, puoi modificare i tuoi dati ed il tuo avatar</p>
+        <div id="settings-navigation">
+          <ul>
+            <li><a (click)="changeSection('Informazioni')" [class.active]="section == 'Informazioni' ? true : false">Informazioni</a></li>
+            <li><a (click)="changeSection('Password');" [class.active]="section == 'Password' ? true : false">Password</a></li>
+            <li><a (click)="changeSection('Avatar')" [class.active]="section == 'Avatar' ? true : false">Avatar</a></li>
+          </ul>
+        </div>
+        <section class="settings_section" [@sectionAnim]  *ngIf="section == 'Informazioni'" id="dati">
+          <h3>Dati</h3>
+          <form [formGroup]="informationForm">
+            <div class="input-container">
+              <img class="inputIcon" src="../../assets/Icon/user.svg">
+              <input value="{{name}}" formControlName="name" type="text" placeholder="Nome utente">
+            </div>
+            <div class="input-container">
+              <img class="inputIcon" src="../../assets/Icon/email.svg">
+              <input value="{{email}}" formControlName="email" type="email" placeholder="Email">
+            </div>
+            <button [disabled]="!informationForm.valid" (click)="changeInformation()"  class="save">Salva impostazione</button>
+          </form>
+        </section>
+        <section class="settings_section" [@sectionAnim]  *ngIf="section == 'Password'" id="password-section">
+          <h3>Password</h3>
+          <form [formGroup]="passwordForm">
+            <div class="input-container">
+              <div class="d-flex">
+                <img class="inputIcon" src="../../assets/Icon/key.svg">
+                <input formControlName="oldPassword" type="password" placeholder="Password attuale">
+                <img  (click)="Password_toggle($event)" class="password_eye" src="../../assets/Icon/password-reveal-off.svg">
+              </div>
+              <p *ngIf="passwordForm.controls['oldPassword'].errors && passwordForm.controls['oldPassword'].errors.pattern" class="error">La password non è valida</p>
+
+            </div>
+            <div class="input-container">
+              <div class="d-flex">
+                <img class="inputIcon" src="../../assets/Icon/key.svg">
+                <input formControlName="newPassword" type="password" placeholder="Nuova password">
+                <img  (click)="Password_toggle($event)" class="password_eye" src="../../assets/Icon/password-reveal-off.svg">
+              </div>
+              <p *ngIf="passwordForm.controls['newPassword'].errors && passwordForm.controls['newPassword'].errors.pattern" class="error">La password deve contenere almeno una lettera maiuscola e due numeri</p>
+              <p *ngIf="passwordForm.controls['newPassword'].errors && passwordForm.controls['newPassword'].errors.equal" class="error">Devi inserire una password, differente dalla precedente</p>
+            </div>
+            <div class="input-container">
+              <div class="d-flex">
+                <img class="inputIcon" src="../../assets/Icon/key.svg">
+                <input formControlName="repeatNewPassword" type="password" placeholder="Conferma nuova password">
+                <img  (click)="Password_toggle($event)" class="password_eye" src="../../assets/Icon/password-reveal-off.svg">
+              </div>
+              <p *ngIf="passwordForm.controls['repeatNewPassword'].errors && passwordForm.controls['repeatNewPassword'].errors.notEqual" class="error">Le password devono essere uguali</p>
+            </div>
+            <p  class="error">{{error}}</p>
+            <p style="margin-bottom:25px" *ngIf="success" class="success">La password è stata modificata correttamente</p>
+            <button [disabled]="!passwordForm.valid" (click)="changePassword()"  class="save">Salva impostazione</button>
+          </form>
+        </section>
+        <section class="settings_section" [@sectionAnim] *ngIf="section == 'Avatar'" id="avatar-section">
+          <form>
+            <h3>Avatar</h3>
+            <div class="d-flex">
+              <img class="avatar" src="{{avatarPreview}}">
+              <div>
+                <input (change)="avatarFileChange($event);"  style="border:none !important" type="file">
+                <a *ngIf="avatar == '../../assets/Images/avatar_placeholder.png' ? false : true" (click)="deleteAvatar();" class="delete_avatar">Elimina</a>
+              </div>
+            </div>
+            <p class="error">{{avatarError}}</p>
+            <button [disabled]="this.avatarImg==undefined"  (click)="changeAvatar();"  class="save">Salva impostazione</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
